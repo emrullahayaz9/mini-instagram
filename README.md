@@ -9,7 +9,7 @@ Postman collection link: https://emrullahayaz901-6731863.postman.co/workspace/em
 1. Projeyi klonlayın:
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/emrullahayaz9/mini-instagram.git
 cd mini-instagram
 ```
 # Gerekli bağımlılıkları yükleyin:
