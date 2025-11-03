@@ -1,0 +1,789 @@
+{
+	"info": {
+		"_postman_id": "9a38188f-af7a-4663-80cc-c2b0aab6ef8f",
+		"name": "My Collection",
+		"description": "### Welcome to Postman! This is your first collection. \n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests\n• Test your API in real-world scenarios\n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "49737177",
+		"_collection_link": "https://emrullahayaz901-6731863.postman.co/workspace/emrullah-ayaz's-Workspace~6bbefea1-bb8b-42dc-8c01-1fdddd37abfa/collection/49737177-9a38188f-af7a-4663-80cc-c2b0aab6ef8f?action=share&source=collection_link&creator=49737177"
+	},
+	"item": [
+		{
+			"name": "create admin user /signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"test_admin_user\",\n  \"password\": \"test\",\n  \"authKey\": \"test_admin_key\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/auth/signup",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create normal user /signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"test_normal_user\",\n  \"password\": \"test_normal\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/auth/signup",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"test_normal_user\",\n  \"password\": \"test_normal\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/auth/login",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"token\": \"token is coming to here.\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/auth/logout",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"auth",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get /me",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer b3ec2620-bdad-4d52-8be4-846be8f66fcd",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/auth/me",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"auth",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get /api/users/{id}",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/users/:id?",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"users",
+						":id"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "aebe0ee9-1665-474d-ad96-6cfe1f892ec5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT /api/users/me/password",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 9f1fcd96-d081-44a2-ab94-7bf341700186",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"oldPassword\": \"test_normal\",\n\"newPassword\": \"test_normal2\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/users/me/password",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"me",
+						"password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE /api/users/me",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 9da8c516-5427-4f80-9054-f36522bd0478",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"oldPassword\": \"test_normal\",\n\"newPassword\": \"test_normal2\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/users/me",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE /api/admin/users/{id}",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer bc6bc944-2931-47b3-872c-c1fd793d6032",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/admin/users/:id",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"admin",
+						"users",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "0bce330d-2d1a-45e0-9c93-9b5bc00a852b"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST /api/posts",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer e84029c8-2ce5-4f83-a829-7b3c7e5a484e",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "description",
+							"value": "test descriptiond",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": []
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/posts",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /api/posts/{id}",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/posts/:id",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"posts",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "3e427dbd-ad05-4cd2-80d0-b0f17d4dd0c6"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET post image",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/uploads/2aa40c23-fa99-490b-b34c-c5318a3f35fd_gannt-chart.png",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"uploads",
+						"2aa40c23-fa99-490b-b34c-c5318a3f35fd_gannt-chart.png"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT /api/posts/{id}",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer ad01d9ef-944d-4e3e-818e-b7388bf7a8e8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "description",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": []
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/posts/:id",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"posts",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "76cb58a6-0398-4c06-a946-8c53c03d3579"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE /api/posts/{id}",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer e122d968-0c51-4339-9f81-e73239fbdbca",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/posts/:id",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"posts",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "7b1f464a-69df-48a7-8492-89254549dd89"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST /api/posts/{id}/view",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 647d2c28-52ff-4673-83ff-2d06da0c11cb",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/posts/:id/view",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"posts",
+						":id",
+						"view"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "f6c06015-9254-4803-95df-440dfd27709b"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /api/posts",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/posts",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST /api/posts/{id}/comments",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer e963ac97-a229-4d3b-b8e8-4bb9b75f6c12",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"content\": \"very nice postd2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/posts/:id/comments",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"posts",
+						":id",
+						"comments"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "007350e6-3077-4cdd-9edf-0362e56e814b"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /api/posts/{id}/comments",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer e61bd4af-d236-47f0-9a95-a38efccf0e9a",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/posts/:id/comments",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"posts",
+						":id",
+						"comments"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "8f095e4c-83e2-4c8d-b74b-a91778a84cba"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE /api/comments/{id}",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 12a3ede1-ae38-44a9-8b70-194ad30310fc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/comments/:id",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"comments",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "9124d415-f4e0-4f1e-982d-f07e72690fbc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST /api/posts/{id}/likes",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 38633e50-2469-4652-b0a9-37c4f200dca5",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/posts/:id/likes",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"posts",
+						":id",
+						"likes"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "629c5f63-7958-4ed5-99d3-1e8b213e0f98"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE /api/posts/{id}/likes",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 38633e50-2469-4652-b0a9-37c4f200dca5",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/posts/:id/likes",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"posts",
+						":id",
+						"likes"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "629c5f63-7958-4ed5-99d3-1e8b213e0f98"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
